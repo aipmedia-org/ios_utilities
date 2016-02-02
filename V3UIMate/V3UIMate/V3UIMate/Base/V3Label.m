@@ -1,0 +1,103 @@
+//
+//  V3Label.m
+//  adeVital
+//
+//  Created by Vyacheslav Dubovitsky on 27.01.16.
+//  Copyright © 2016 aipmedia. All rights reserved.
+//
+
+#import "V3Label.h"
+
+@implementation V3Label
+
+// Update these constaints when the default minimal width of devices changes
+CGFloat const phoneMinimalScreenWidth = 320;
+CGFloat const padMinimalScreenWidth = 768;
+
+- (void)realInit
+{
+    [self applyStyles];
+    
+    if (_fontSizeIsRelativeToScreenWidth) {
+        self.attributedText = [self makeFontSizeRalativeToCurrentScreenWidthForAttributedString:self.attributedText];
+    }
+
+    if (_letterSpacing != 0) {
+        self.attributedText = [self assignLetterSpacingValueToAttributedString:self.attributedText];
+    }
+}
+
+- (NSMutableAttributedString *)makeFontSizeRalativeToCurrentScreenWidthForAttributedString:(NSAttributedString *)attributedString
+{
+    // Detecting which side of screen is width in portrait orientation
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    CGFloat currentScreenWidth = screenBounds.size.width >= screenBounds.size.height ? screenBounds.size.width : screenBounds.size.height;
+    
+    // Setting the default values of screen width based on device type
+    CGFloat minimalScreenWidth;
+    if (self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        minimalScreenWidth = phoneMinimalScreenWidth;
+    } else {
+        minimalScreenWidth = padMinimalScreenWidth;
+    }
+    
+    // Updating font size of the input *attributedString
+    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    [mutableAttributedString beginEditing];
+    [mutableAttributedString enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, mutableAttributedString.length) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
+        
+        UIFont* font = value;
+        // Calculating the relative font size value and applying it
+        CGFloat relativeFontSize = font.pointSize / minimalScreenWidth * currentScreenWidth;
+        font = [font fontWithSize:relativeFontSize];
+        
+        [mutableAttributedString removeAttribute:NSFontAttributeName range:range];
+        [mutableAttributedString addAttribute:NSFontAttributeName value:font range:range];
+    }];
+    [mutableAttributedString endEditing];
+    
+    return mutableAttributedString;
+}
+
+- (NSMutableAttributedString *)assignLetterSpacingValueToAttributedString:(NSAttributedString *)attributedString
+{
+    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
+    
+    [mutableAttributedString addAttribute:NSKernAttributeName
+                             value:@(_letterSpacing)
+                             range:NSMakeRange(0, attributedString.length)];
+    
+    return mutableAttributedString;
+}
+
+// Public Method for Styles implementation in your Subclass
+- (void)applyStyles
+{
+}
+
+// Overriding the initializers
+- (void)prepareForInterfaceBuilder
+{
+    [self realInit];
+}
+
+- (void)awakeFromNib
+{
+    [self realInit];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self)
+    {
+        [self realInit];
+    }
+    
+    return self;
+    
+}
+
+
+@end
