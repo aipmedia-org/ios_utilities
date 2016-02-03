@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "V3Label.h"
 
 @interface ViewController ()
 

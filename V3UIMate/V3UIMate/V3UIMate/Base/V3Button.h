@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#if TARGET_INTERFACE_BUILDER
+IB_DESIGNABLE
+#endif
+
 @interface V3Button : UIButton
 
 - (void)applyStyles; // Empty method where your styles should be defined.

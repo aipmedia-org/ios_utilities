@@ -19,15 +19,15 @@ CGFloat const padMinimalScreenWidth = 768;
     [self applyStyles];
     
     if (_fontSizeIsRelativeToScreenWidth) {
-        self.attributedText = [self makeFontSizeRalativeToCurrentScreenWidthForAttributedString:self.attributedText];
+        self.attributedText = [self attributedStringWithFontSizeRelativeToScreenWidthBasedOnAttributedString:self.attributedText];
     }
 
     if (_letterSpacing != 0) {
-        self.attributedText = [self assignLetterSpacingValueToAttributedString:self.attributedText];
+        self.attributedText = [self attributedStringWithLetterSpacingValue:_letterSpacing basedOnAttributedString:self.attributedText];
     }
 }
 
-- (NSMutableAttributedString *)makeFontSizeRalativeToCurrentScreenWidthForAttributedString:(NSAttributedString *)attributedString
+- (NSAttributedString *)attributedStringWithFontSizeRelativeToScreenWidthBasedOnAttributedString:(NSAttributedString *)attributedString
 {
     // Detecting which side of screen is width in portrait orientation
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
@@ -35,14 +35,14 @@ CGFloat const padMinimalScreenWidth = 768;
     
     // Setting the default values of screen width based on device type
     CGFloat minimalScreenWidth;
-    if (self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
         minimalScreenWidth = phoneMinimalScreenWidth;
     } else {
         minimalScreenWidth = padMinimalScreenWidth;
     }
     
     // Updating font size of the input *attributedString
-    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
     [mutableAttributedString beginEditing];
     [mutableAttributedString enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, mutableAttributedString.length) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
         
@@ -56,18 +56,18 @@ CGFloat const padMinimalScreenWidth = 768;
     }];
     [mutableAttributedString endEditing];
     
-    return mutableAttributedString;
+    return [mutableAttributedString copy];
 }
 
-- (NSMutableAttributedString *)assignLetterSpacingValueToAttributedString:(NSAttributedString *)attributedString
+- (NSAttributedString *)attributedStringWithLetterSpacingValue:(CGFloat)letterSpacingvalue basedOnAttributedString:(NSAttributedString *)attributedString
 {
     NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
     
     [mutableAttributedString addAttribute:NSKernAttributeName
-                             value:@(_letterSpacing)
+                             value:@(letterSpacingvalue)
                              range:NSMakeRange(0, attributedString.length)];
     
-    return mutableAttributedString;
+    return [mutableAttributedString copy];
 }
 
 // Public Method for Styles implementation in your Subclass
@@ -83,6 +83,7 @@ CGFloat const padMinimalScreenWidth = 768;
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self realInit];
 }
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EA69840D1C6157AB0083F8ED /* V3Button.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69840A1C6157AB0083F8ED /* V3Button.m */; };
 		EA69840E1C6157AB0083F8ED /* V3Label.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69840C1C6157AB0083F8ED /* V3Label.m */; };
+		EA6984101C623DD20083F8ED /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA69840F1C623DD20083F8ED /* SF-UI-Text-Regular.otf */; };
+		EA69841C1C6273EF0083F8ED /* V3ButtonBigBlack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69841B1C6273EF0083F8ED /* V3ButtonBigBlack.m */; };
 		EAA806AC1C614AEF00A28945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA806AB1C614AEF00A28945 /* main.m */; };
 		EAA806AF1C614AEF00A28945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA806AE1C614AEF00A28945 /* AppDelegate.m */; };
 		EAA806B21C614AEF00A28945 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA806B11C614AEF00A28945 /* ViewController.m */; };
@@ -41,6 +43,9 @@
 		EA69840A1C6157AB0083F8ED /* V3Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V3Button.m; sourceTree = "<group>"; };
 		EA69840B1C6157AB0083F8ED /* V3Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V3Label.h; sourceTree = "<group>"; };
 		EA69840C1C6157AB0083F8ED /* V3Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V3Label.m; sourceTree = "<group>"; };
+		EA69840F1C623DD20083F8ED /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		EA69841A1C6273EF0083F8ED /* V3ButtonBigBlack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V3ButtonBigBlack.h; sourceTree = "<group>"; };
+		EA69841B1C6273EF0083F8ED /* V3ButtonBigBlack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V3ButtonBigBlack.m; sourceTree = "<group>"; };
 		EAA806A71C614AEF00A28945 /* V3UIMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V3UIMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA806AB1C614AEF00A28945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAA806AD1C614AEF00A28945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +92,9 @@
 		EA6984071C6157AB0083F8ED /* V3UIMate */ = {
 			isa = PBXGroup;
 			children = (
+				EA6984191C625A6D0083F8ED /* Other Styles */,
+				EA6984181C625A4B0083F8ED /* Labels Styles */,
+				EA6984171C625A3F0083F8ED /* Buttons Styles */,
 				EA6984081C6157AB0083F8ED /* Base */,
 			);
 			path = V3UIMate;
@@ -101,6 +109,29 @@
 				EA69840C1C6157AB0083F8ED /* V3Label.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		EA6984171C625A3F0083F8ED /* Buttons Styles */ = {
+			isa = PBXGroup;
+			children = (
+				EA69841A1C6273EF0083F8ED /* V3ButtonBigBlack.h */,
+				EA69841B1C6273EF0083F8ED /* V3ButtonBigBlack.m */,
+			);
+			name = "Buttons Styles";
+			sourceTree = "<group>";
+		};
+		EA6984181C625A4B0083F8ED /* Labels Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Labels Styles";
+			sourceTree = "<group>";
+		};
+		EA6984191C625A6D0083F8ED /* Other Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Styles";
 			sourceTree = "<group>";
 		};
 		EAA8069E1C614AEF00A28945 = {
@@ -132,6 +163,7 @@
 				EAA806B01C614AEF00A28945 /* ViewController.h */,
 				EAA806B11C614AEF00A28945 /* ViewController.m */,
 				EAA806B31C614AEF00A28945 /* Main.storyboard */,
+				EA69840F1C623DD20083F8ED /* SF-UI-Text-Regular.otf */,
 				EAA806B61C614AEF00A28945 /* Assets.xcassets */,
 				EAA806B81C614AEF00A28945 /* LaunchScreen.storyboard */,
 				EAA806BB1C614AEF00A28945 /* Info.plist */,
@@ -271,6 +303,7 @@
 			files = (
 				EAA806BA1C614AEF00A28945 /* LaunchScreen.storyboard in Resources */,
 				EAA806B71C614AEF00A28945 /* Assets.xcassets in Resources */,
+				EA6984101C623DD20083F8ED /* SF-UI-Text-Regular.otf in Resources */,
 				EAA806B51C614AEF00A28945 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +332,7 @@
 				EAA806B21C614AEF00A28945 /* ViewController.m in Sources */,
 				EAA806AF1C614AEF00A28945 /* AppDelegate.m in Sources */,
 				EA69840D1C6157AB0083F8ED /* V3Button.m in Sources */,
+				EA69841C1C6273EF0083F8ED /* V3ButtonBigBlack.m in Sources */,
 				EA69840E1C6157AB0083F8ED /* V3Label.m in Sources */,
 				EAA806AC1C614AEF00A28945 /* main.m in Sources */,
 			);

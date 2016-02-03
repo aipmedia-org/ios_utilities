@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#if TARGET_INTERFACE_BUILDER
+IB_DESIGNABLE
+#endif
+
 @interface V3Label : UILabel
 
 /* Notice that all of the properties below interact with *attributedText of your label. You can setup your label with *font, *color and other simple properties only via overriding the -(void)applyStyles method in your subclass */
