@@ -7,13 +7,34 @@
 //
 
 #import "V3Button.h"
-#import "V3Label.h"
+#import "NSMutableAttributedString+V3LabelAdditions.h"
 
 @implementation V3Button
 
 - (void)realInit
 {
+    // Throwing an exception if buttonType is not UIButtonTypeCustom
+    if (self.buttonType != 0) {
+        NSException *wrongButtonTypeException = [NSException
+                                                 exceptionWithName:@"WrongButtonTypeException"
+                                                 reason:@"V3Button only supports UIButtonTypeCustom as button type. Please make sure you chose the right Button Type in Storyboard Attributes Inspector or used right UIButtonType during button initialisation in code"
+                                                 userInfo:nil];
+        @throw wrongButtonTypeException;
+    }
+    
+    // Applying styles from subclass
     [self applyStyles];
+    
+    // Making Font Size relative to screen width if needed
+    if (_fontSizeIsRelativeToScreenWidth) {
+        [self setAttributedTitle:[NSMutableAttributedString attributedStringWithFontSizeRelativeToScreenWidthBasedOnAttributedString:self.currentAttributedTitle] forState:UIControlStateNormal];
+    }
+    
+    // Setting the letter spacing if needed
+    if (_letterSpacing != 0) {
+        [self setAttributedTitle:[NSMutableAttributedString attributedStringWithLetterSpacingValue:_letterSpacing basedOnAttributedString:self.currentAttributedTitle] forState:UIControlStateNormal];
+    }
+    
 }
 
 // Public Method for Styles implementation in your Subclass
@@ -63,12 +84,6 @@
                         [self.layer displayIfNeeded];
                     }
                     completion:nil];
-}
-
-// Forced setting the button type to Custom
-- (UIButtonType)buttonType
-{
-    return UIButtonTypeCustom;
 }
 
 // Overriding the initializers

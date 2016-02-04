@@ -16,8 +16,8 @@ IB_DESIGNABLE
 
 /* Notice that all of the properties below interact with *attributedText of your label. You can setup your label with *font, *color and other simple properties only via overriding the -(void)applyStyles method in your subclass */
 
-@property (nonatomic) BOOL fontSizeIsRelativeToScreenWidth; // If enblaed font size will be relative to current screen width. Your font size value then should be specified for minimal phone or tablet resolution
-@property (nonatomic) CGFloat letterSpacing; // Fast changer for the NSKernAttributeName attribute.
+@property (nonatomic) IBInspectable BOOL fontSizeIsRelativeToScreenWidth; // If enblaed font size will be relative to current screen width. Your font size value then should be specified for minimal phone or tablet resolution
+@property (nonatomic) IBInspectable CGFloat letterSpacing; // Fast changer for the NSKernAttributeName attribute.
 
 - (void)applyStyles; // Empty method where your styles should be defined.
 

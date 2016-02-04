@@ -16,9 +16,9 @@
     [self setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
     
     [self.titleLabel setFont:[UIFont systemFontOfSize:20 weight:UIFontWeightThin]];
+    self.fontSizeIsRelativeToScreenWidth = NO;
+    self.letterSpacing = 20;
     [self setBackgroundColor:[UIColor blackColor]];
-    
-    NSLog(@"%ld", (long)self.buttonType);
 }
 
 - (void)drawRect:(CGRect)rect
