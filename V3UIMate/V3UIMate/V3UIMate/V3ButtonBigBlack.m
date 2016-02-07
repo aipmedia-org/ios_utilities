@@ -14,10 +14,8 @@
 {
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
-    
-    [self.titleLabel setFont:[UIFont systemFontOfSize:20 weight:UIFontWeightThin]];
-    self.fontSizeIsRelativeToScreenWidth = NO;
-    self.letterSpacing = 20;
+    self.fontSizeIsRelativeToScreenWidth = YES;
+//    [self.titleLabel setFont:[UIFont systemFontOfSize:22 weight:UIFontWeightThin]];
     [self setBackgroundColor:[UIColor blackColor]];
 }
 

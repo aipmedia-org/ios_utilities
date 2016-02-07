@@ -19,6 +19,7 @@
 		EAA806C51C614AEF00A28945 /* V3UIMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA806C41C614AEF00A28945 /* V3UIMateTests.m */; };
 		EAA806D01C614AEF00A28945 /* V3UIMateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA806CF1C614AEF00A28945 /* V3UIMateUITests.m */; };
 		EAB291DA1C63D1BC004B39D8 /* NSMutableAttributedString+V3LabelAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB291D91C63D1BC004B39D8 /* NSMutableAttributedString+V3LabelAdditions.m */; };
+		EAB291DD1C64D47B004B39D8 /* V3LabelBigBlackHeading.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB291DC1C64D47B004B39D8 /* V3LabelBigBlackHeading.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		EAA806D11C614AEF00A28945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAB291D81C63D1BC004B39D8 /* NSMutableAttributedString+V3LabelAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+V3LabelAdditions.h"; sourceTree = "<group>"; };
 		EAB291D91C63D1BC004B39D8 /* NSMutableAttributedString+V3LabelAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+V3LabelAdditions.m"; sourceTree = "<group>"; };
+		EAB291DB1C64D47B004B39D8 /* V3LabelBigBlackHeading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V3LabelBigBlackHeading.h; sourceTree = "<group>"; };
+		EAB291DC1C64D47B004B39D8 /* V3LabelBigBlackHeading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V3LabelBigBlackHeading.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 		EA6984181C625A4B0083F8ED /* Labels Styles */ = {
 			isa = PBXGroup;
 			children = (
+				EAB291DB1C64D47B004B39D8 /* V3LabelBigBlackHeading.h */,
+				EAB291DC1C64D47B004B39D8 /* V3LabelBigBlackHeading.m */,
 			);
 			name = "Labels Styles";
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				EAA806B21C614AEF00A28945 /* ViewController.m in Sources */,
 				EAA806AF1C614AEF00A28945 /* AppDelegate.m in Sources */,
 				EA69840D1C6157AB0083F8ED /* V3Button.m in Sources */,
+				EAB291DD1C64D47B004B39D8 /* V3LabelBigBlackHeading.m in Sources */,
 				EA69841C1C6273EF0083F8ED /* V3ButtonBigBlack.m in Sources */,
 				EAB291DA1C63D1BC004B39D8 /* NSMutableAttributedString+V3LabelAdditions.m in Sources */,
 				EA69840E1C6157AB0083F8ED /* V3Label.m in Sources */,

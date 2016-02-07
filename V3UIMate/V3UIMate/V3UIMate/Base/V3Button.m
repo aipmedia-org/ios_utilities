@@ -27,12 +27,12 @@
     
     // Making Font Size relative to screen width if needed
     if (_fontSizeIsRelativeToScreenWidth) {
-        [self setAttributedTitle:[NSMutableAttributedString attributedStringWithFontSizeRelativeToScreenWidthBasedOnAttributedString:self.currentAttributedTitle] forState:UIControlStateNormal];
+        [self setAttributedTitle:[NSMutableAttributedString attributedStringWithFontSizeRelativeToScreenWidthBasedOnAttributedString:self.titleLabel.attributedText] forState:UIControlStateNormal];
     }
     
     // Setting the letter spacing if needed
     if (_letterSpacing != 0) {
-        [self setAttributedTitle:[NSMutableAttributedString attributedStringWithLetterSpacingValue:_letterSpacing basedOnAttributedString:self.currentAttributedTitle] forState:UIControlStateNormal];
+        [self setAttributedTitle:[NSMutableAttributedString attributedStringWithLetterSpacingValue:_letterSpacing basedOnAttributedString:self.titleLabel.attributedText] forState:UIControlStateNormal];
     }
     
 }
