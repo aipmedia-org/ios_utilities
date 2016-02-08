@@ -11,7 +11,7 @@
 
 @interface NSMutableAttributedString (V3LabelAdditions)
 
-+ (NSMutableAttributedString *)attributedStringWithFontSizeRelativeToScreenWidthBasedOnAttributedString:(NSAttributedString *)attributedString; // Returns an Attributed String with font size relative to current screen width. Notice that initial font size should be setted for 320pt width for Phone screen and 768pt width of iPad screen
++ (NSMutableAttributedString *)attributedStringWithFontSizeRelativeToScreenWidthBasedOnAttributedString:(NSAttributedString *)attributedString; /* Returns an Attributed String with font size relative to current screen width. Notice that original font size value should be specified for 320pt width of Phone screen and 768pt width of iPad screen  */
 + (NSMutableAttributedString *)attributedStringWithLetterSpacingValue:(CGFloat)letterSpacingvalue basedOnAttributedString:(NSAttributedString *)attributedString; // Returns an Attributed String with setted Letter Spacing value
 
 @end
